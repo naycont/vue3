@@ -1,8 +1,20 @@
 @import '@/assets/base.css';
 
 #app {
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: var(--ui-padding);
   font-weight: normal;
+  background-color: #f6f6f6;
+  main {
+    height: calc(100% - var(--v-layout-top));
+    padding: var(--ui-padding);
+    margin-left: var(--v-layout-left);
+    margin-top: var(--v-layout-top);
+    .main-container {
+      height: 100%;
+      border-radius: 4px;
+      background: white;
+    }
+  }
 }
