@@ -9,13 +9,18 @@ const routeName = computed(() => route.name)
 const navigation = [
   {
     name: 'profile',
-    title: 'Home',
-    icon: 'home',
+    title: 'Profile',
+    icon: 'account_circle',
   },
   {
     name: 'projects',
     title: 'Projects',
     icon: 'code',
+  },
+  {
+    name: 'contact',
+    title: 'Contact',
+    icon: 'alternate_email',
   },
 ]
 </script>
@@ -26,11 +31,12 @@ const navigation = [
       :key="navigationItem.name"
       :title="navigationItem.title"
       :prepend-icon="navigationItem.icon"
-      link
+      :to="navigationItem.name"
       :active="routeName === navigationItem.name"
     ></v-list-item>
     <template v-slot:append>
       <div class="navigation__footer">
+        <v-divider class="mb-2"></v-divider>
         <TheLanguageToggle />
       </div>
     </template>
@@ -40,8 +46,6 @@ const navigation = [
 <style lang="scss" scoped>
 .navigation {
   &__footer {
-    display: flex;
-    justify-content: center;
     padding: var(--ui-padding);
   }
 }

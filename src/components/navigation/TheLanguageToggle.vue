@@ -9,14 +9,17 @@ const changeLanguage = (newLanguage: string) => {
 }
 </script>
 <template>
-  <v-btn-toggle density="compact" rounded group variant="text" v-model="currentLanguage">
-    <v-btn
-      v-for="language in languages"
-      :key="language"
-      :value="language"
-      @click="changeLanguage(language)"
-    >
-      {{ language }}
-    </v-btn>
-  </v-btn-toggle>
+  <div class="d-flex align-center justify-space-between">
+    <v-icon>language</v-icon>
+    <v-btn-toggle density="compact" rounded group variant="text" v-model="currentLanguage">
+      <v-btn
+        v-for="language in languages"
+        :key="language"
+        :value="language"
+        @click="changeLanguage(language)"
+      >
+        {{ language }}
+      </v-btn>
+    </v-btn-toggle>
+  </div>
 </template>

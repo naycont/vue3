@@ -1,0 +1,3 @@
+<template>
+  <div class="contact">This is contact page</div>
+</template>
