@@ -41,6 +41,10 @@ const hasTechnologies = computed(() => {
 const hasLinks = computed(() => {
   return Boolean(profile?.links.length)
 })
+
+const profileLinks = computed(() => {
+  return profile.links.filter((link) => link.id === 'github')
+})
 </script>
 
 <template>
@@ -48,9 +52,6 @@ const hasLinks = computed(() => {
     <div class="profile__content text-center">
       <div class="text-h3">{{ fullName }}</div>
       <div class="text-h5">{{ profile.role }}</div>
-      <div class="text-subtitle-1">
-        <a target="_blank" :href="`mailto:${profile.email}`">{{ profile.email }}</a>
-      </div>
       <div class="text-subtitle-1">{{ profile.location.name }}</div>
     </div>
 
@@ -65,10 +66,12 @@ const hasLinks = computed(() => {
     </div>
 
     <div class="profile__content profile__content--links" v-if="hasLinks">
-      <div class="ml-2" v-for="link in profile.links" :key="link.id">
+      <div class="ml-2" v-for="link in profileLinks" :key="link.id">
         <a target="_blank" :href="link.url">{{ link.name }}</a>
       </div>
     </div>
+
+    <div class="profile__content">Donwload resume</div>
   </div>
 </template>
 
