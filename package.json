@@ -18,7 +18,8 @@
   "dependencies": {
     "pinia": "^2.2.6",
     "vue": "^3.5.12",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vuetify": "^3.7.4"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
@@ -35,8 +36,12 @@
     "eslint-plugin-cypress": "^4.1.0",
     "eslint-plugin-vue": "^9.30.0",
     "jsdom": "^25.0.1",
+    "material-design-icons-iconfont": "^6.7.0",
     "npm-run-all2": "^7.0.1",
     "prettier": "^3.3.3",
+    "sass": "^1.83.1",
+    "sass-embedded": "^1.83.0",
+    "sass-loader": "^16.0.4",
     "start-server-and-test": "^2.0.8",
     "typescript": "~5.6.3",
     "vite": "^5.4.10",

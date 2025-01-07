@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TheSideNavigation from '@/components/TheSideNavigation.vue'
+import TheSideNavigation from '@/components/navigation/TheSideNavigation.vue'
 import TheAppBar from '@/components/TheAppBar.vue'
 import { RouterView } from 'vue-router'
 </script>
