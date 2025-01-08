@@ -1,0 +1,16 @@
+{
+  "contact": {
+    "title": "¿Tienes una pregunta o sólo quieres decir hola?"
+  },
+  "global": {
+    "submit": "Enviar",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje"
+    }
+  },
+  "profile": {
+    "downloadResume": "Descargar CV"
+  }
+}

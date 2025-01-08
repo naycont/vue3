@@ -39,10 +39,6 @@ const fullName = computed(() => {
 const hasTechnologies = computed(() => {
   return Boolean(profile?.technologies.length)
 })
-
-const profileLinks = computed(() => {
-  return profile.links.filter((link) => link.id === 'github')
-})
 </script>
 
 <template>
@@ -69,17 +65,9 @@ const profileLinks = computed(() => {
     </div>
 
     <div class="profile__content d-flex justify-center align-center">
-      <!--
-      <div v-for="link in profileLinks" :key="link.id">
-        <a class="d-flex flex-column" target="_blank" :href="link.url">
-          <img :src="link.image" height="50px" width="50px" />
-          {{ link.name }}
-        </a>
-      </div>
-      -->
       <div class="d-flex flex-column justify-center align-center">
         <v-btn height="50px" width="50px" color="primary" icon="download"></v-btn>
-        <div class="text-subtitle-1 mt-1">Donwload resume</div>
+        <div class="text-subtitle-1 mt-1">{{ $t('profile.downloadResume') }}</div>
       </div>
     </div>
   </div>

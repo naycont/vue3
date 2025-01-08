@@ -1,24 +1,25 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { localeStore } from '@/stores/locale'
 
-const languages: Array<string> = ['EN', 'ES']
-const currentLanguage = ref(languages[0])
+const store = localeStore()
 
-const changeLanguage = (newLanguage: string) => {
-  currentLanguage.value = newLanguage
+const locales = computed(() => {
+  return store.locales
+})
+
+const currentLocale = ref(store.locale)
+
+const toggleLocale = (newLocale: string) => {
+  store.toggleLocale(newLocale)
 }
 </script>
 <template>
   <div class="d-flex align-center justify-space-between">
     <v-icon>language</v-icon>
-    <v-btn-toggle density="compact" rounded group variant="text" v-model="currentLanguage">
-      <v-btn
-        v-for="language in languages"
-        :key="language"
-        :value="language"
-        @click="changeLanguage(language)"
-      >
-        {{ language }}
+    <v-btn-toggle density="compact" rounded group variant="text" v-model="currentLocale">
+      <v-btn v-for="locale in locales" :key="locale" :value="locale" @click="toggleLocale(locale)">
+        {{ locale }}
       </v-btn>
     </v-btn-toggle>
   </div>

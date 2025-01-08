@@ -1,0 +1,16 @@
+{
+  "contact": {
+    "title": "Have a question or want to say hello?"
+  },
+  "global": {
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "message"
+    },
+    "submit": "submit"
+  },
+  "profile": {
+    "downloadResume": "Download resume"
+  }
+}
