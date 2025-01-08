@@ -36,7 +36,7 @@ const links = [
 
       <v-textarea label="Message" required variant="underlined"></v-textarea>
       <div class="d-flex justify-end">
-        <v-btn class="mt-2" type="submit">Submit</v-btn>
+        <v-btn class="mt-2" color="primary" type="submit">Submit</v-btn>
       </div>
     </v-form>
   </div>

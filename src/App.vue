@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import TheSideNavigation from '@/components/navigation/TheSideNavigation.vue'
-import TheAppBar from '@/components/TheAppBar.vue'
+import TheHeading from '@/components/header/TheHeading.vue'
 import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <v-app id="app">
-    <TheAppBar />
+    <TheHeading />
     <TheSideNavigation />
 
     <v-main>

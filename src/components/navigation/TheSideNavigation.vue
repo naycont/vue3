@@ -25,7 +25,7 @@ const navigation = [
 ]
 </script>
 <template>
-  <v-navigation-drawer class="navigation" floating>
+  <v-navigation-drawer class="navigation">
     <v-list-item
       v-for="navigationItem in navigation"
       :key="navigationItem.name"
