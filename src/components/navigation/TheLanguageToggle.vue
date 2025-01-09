@@ -1,17 +1,15 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue'
-import { localeStore } from '@/stores/locale'
+import { useI18n } from 'vue-i18n'
+import { useLocalStorage } from '@vueuse/core'
 
-const store = localeStore()
+const { locale } = useI18n({ useScope: 'global' })
 
-const locales = computed(() => {
-  return store.locales
-})
+const locales: Array<string> = ['en', 'es']
 
-const currentLocale = ref(store.locale)
+const currentLocale = useLocalStorage('locale', 'en')
 
 const toggleLocale = (newLocale: string) => {
-  store.toggleLocale(newLocale)
+  locale.value = newLocale
 }
 </script>
 <template>
