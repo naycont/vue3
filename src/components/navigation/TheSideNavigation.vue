@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TheLanguageToggle from '@/components/navigation/TheLanguageToggle.vue'
+import { useSideNavigationStore } from '@/stores/sideNavigation'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -8,6 +9,11 @@ const { t: $t } = useI18n()
 
 const route = useRoute()
 const routeName = computed(() => route.name)
+
+const sideNavigationStore = useSideNavigationStore()
+const opened =  computed(() => {
+  return sideNavigationStore.opened
+})
 
 const navigation = computed(() => {
   return [
@@ -30,7 +36,7 @@ const navigation = computed(() => {
 })
 </script>
 <template>
-  <v-navigation-drawer class="navigation">
+  <v-navigation-drawer class="navigation" v-model="opened">
     <v-list-item
       v-for="navigationItem in navigation"
       :key="navigationItem.name"
