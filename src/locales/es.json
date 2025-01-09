@@ -10,7 +10,17 @@
       "message": "Mensaje"
     }
   },
+  "navigation": {
+    "menu": {
+      "profile": "Perfil",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    }
+  },
   "profile": {
     "downloadResume": "Descargar CV"
+  },
+  "theme": {
+    "switch": "Cambiar a tema {theme}"
   }
 }

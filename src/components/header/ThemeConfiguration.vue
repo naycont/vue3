@@ -1,22 +1,26 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useTheme } from 'vuetify'
+import { useI18n } from 'vue-i18n'
+const { t: $t } = useI18n()
 
 const themeNames = {
   light: 'light',
   dark: 'dark',
 }
 
-const themeConfiguration = {
-  [themeNames.light]: {
-    tooltip: 'switch to dark theme',
-    icon: 'dark_mode',
-  },
-  [themeNames.dark]: {
-    tooltip: 'switch to light theme',
-    icon: 'light_mode',
-  },
-}
+const themeConfiguration = computed(() => {
+  return {
+    [themeNames.light]: {
+      tooltip: $t('theme.switch', { theme: themeNames.dark }),
+      icon: 'dark_mode',
+    },
+    [themeNames.dark]: {
+      tooltip: $t('theme.switch', { theme: themeNames.light }),
+      icon: 'light_mode',
+    },
+  }
+})
 
 const theme = useTheme()
 
@@ -29,7 +33,7 @@ const currentTheme = computed(() => {
 })
 
 const currentThemeConfiguration = computed(() => {
-  return themeConfiguration[currentTheme.value]
+  return themeConfiguration.value[currentTheme.value]
 })
 
 const toggleTheme = () => {

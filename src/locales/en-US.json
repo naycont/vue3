@@ -10,7 +10,17 @@
     },
     "submit": "submit"
   },
+  "navigation": {
+    "menu": {
+      "profile": "Profile",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  },
   "profile": {
     "downloadResume": "Download resume"
+  },
+  "theme": {
+    "switch": "Switch to {theme} theme"
   }
 }

@@ -2,27 +2,32 @@
 import TheLanguageToggle from '@/components/navigation/TheLanguageToggle.vue'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t: $t } = useI18n()
 
 const route = useRoute()
 const routeName = computed(() => route.name)
 
-const navigation = [
-  {
-    name: 'profile',
-    title: 'Profile',
-    icon: 'account_circle',
-  },
-  {
-    name: 'projects',
-    title: 'Projects',
-    icon: 'code',
-  },
-  {
-    name: 'contact',
-    title: 'Contact',
-    icon: 'alternate_email',
-  },
-]
+const navigation = computed(() => {
+  return [
+    {
+      name: 'profile',
+      title: $t('navigation.menu.profile'),
+      icon: 'account_circle',
+    },
+    {
+      name: 'projects',
+      title: $t('navigation.menu.projects'),
+      icon: 'code',
+    },
+    {
+      name: 'contact',
+      title: $t('navigation.menu.contact'),
+      icon: 'alternate_email',
+    },
+  ]
+})
 </script>
 <template>
   <v-navigation-drawer class="navigation">
